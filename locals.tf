@@ -72,22 +72,22 @@ locals {
       timezone           = try(u.timezone, null)
       title              = try(u.title, null)
       user_type          = try(u.user_type, null)
-      name = object({
+      name = {
         family_name = u.name.family_name
         given_name  = u.name.given_name
-      })
+      }
 
       emails = tolist(try([for e in u.emails : object({
         primary = try(e.primary, null)
         type    = try(e.type, null)
         value   = try(e.value, null)
-      })]))
+      })], []))
 
       phone_numbers = tolist(try([for pn in u.phone_numbers : object({
         primary = try(pn.primary, null)
         type    = try(pn.type, null)
         value   = try(pn.value, null)
-      })]))
+      })], []))
 
       addresses = tolist(try([for a in u.addresses : object({
         country        = try(a.country, null)
@@ -98,7 +98,7 @@ locals {
         region         = try(a.region, null)
         street_address = try(a.street_address, null)
         type           = try(a.type, null)
-      })]))
+      })], []))
     }])
   }
 }
