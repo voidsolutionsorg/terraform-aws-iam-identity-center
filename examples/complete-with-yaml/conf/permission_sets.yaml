@@ -1,0 +1,39 @@
+permission_sets:
+  # managed policy and customer_managed_policy
+  - name: "AdministratorAccess"
+    description: "Description for administrator access"
+    managed_policies: ["arn:aws:iam::aws:policy/AdministratorAccess"]
+    customer_managed_policies:
+      - name: "customized_billing_policy" # imagine we have a policy in IAM
+        path: "/"
+    session_duration: "PT4H"
+  # example for inline with json path
+  - name: "CustomizedS3ReadAccessJsonPath"
+    description: "S3 read only"
+    inline_policy_json_path: "./policies/S3ReadCustomizedBucket.json"
+    session_duration: "PT4H"
+    boundary_policy:
+      type: "CUSTOMER_MANAGED"
+      customer_policy_name: "s3_boundary_customer_managed_policy" # imagine we have a policy in IAM
+      customer_policy_path: "/"
+  # example for inline with json path
+  - name: "CustomizedS3ReadAccessInline"
+    description: "S3 read only"
+    inline_policy: |
+      {
+        "Version":"2012-10-17",
+        "Statement":[
+          {
+              "Effect":"Allow",
+              "Action":[
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+              ],
+              "Resource":"arn:aws:s3:::example/*"
+          }
+        ]
+      }
+    session_duration: "PT4H"
+    boundary_policy:
+      type: "MANAGED"
+      managed_policy_arn: "arn:aws:iam::aws:policy/S3ReadOnly"

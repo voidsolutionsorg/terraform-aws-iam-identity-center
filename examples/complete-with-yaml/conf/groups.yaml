@@ -1,0 +1,10 @@
+groups:
+  - name: "Admin"
+    description: "Description for admin group"
+    users: ["test.admin"]
+  - name: "TeamA"
+    description: "Description for team A"
+    users: ["teamA.user1", "teamA.user2"]
+  - name: "TeamB"
+    description: "Description for team B"
+    users: ["teamB.user1", "teamB.user2"]

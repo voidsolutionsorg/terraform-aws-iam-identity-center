@@ -1,0 +1,37 @@
+users:
+  - display_name: "Display Name"
+    user_name: "test.admin"
+    name:
+      family_name: "Display"
+      given_name: "Name"
+    emails:
+      - primary: true
+        type: "AnyType"
+        value: "example1@example.com"
+  - display_name: "Display Name"
+    user_name: "teamA.user1"
+    name:
+      family_name: "Display"
+      given_name: "Name"
+    emails:
+      - primary: true
+        type: "AnyType"
+        value: "example2@example.com"
+  - display_name: "Display Name"
+    user_name: "teamA.user2"
+    name:
+      family_name: "Display"
+      given_name: "Name"
+    emails:
+      - primary: true
+        type: "AnyType"
+        value: "example3@example.com"
+  - display_name: "Display Name"
+    user_name: "teamB.user1"
+    name:
+      family_name: "Display"
+      given_name: "Name"
+    emails:
+      - primary: true
+        type: "AnyType"
+        value: "example4@example.com"
