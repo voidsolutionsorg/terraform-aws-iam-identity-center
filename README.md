@@ -6,7 +6,7 @@ In this example with yaml conf...
 
 ```terraform
 module "iam_identity_center" {
-  source  = "tminaorg/iam-identity-center/aws"
+  source  = "voidsolutionsorg/iam-identity-center/aws"
   version = "1.0.0"
 
   # variables are configured via yaml files inside "conf" folder
@@ -103,7 +103,7 @@ In this example with standard tf variables...
 
 ```terraform
 module "iam_identity_center" {
-  source                        = "tminaorg/iam-identity-center/aws"
+  source                        = "voidsolutionsorg/iam-identity-center/aws"
   version                       = "1.0.0"
 
   permission_sets = [
@@ -270,14 +270,14 @@ module "iam_identity_center" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.65 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.65 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
 
 ## Modules
 
@@ -315,7 +315,9 @@ No outputs.
 
 ## Authors
 
-Module is maintained by [Nikola Kolovic](https://github.com/nikolakolovic) and [Aleksa Siriški](https://github.com/aleksasiriski) with help from [CyberLab Team](https://github.com/cyberlabrs).
+Module is maintained by [Aleksa Siriški](https://github.com/aleksasiriski) with help from the [VoidSolutions team](https://github.com/voidsolutionsorg).
+
+Module was originally made by [Nikola Kolović](https://github.com/nikolakolovic) with help from the [CyberLab team](https://github.com/cyberlabrs).
 
 ## License
 
